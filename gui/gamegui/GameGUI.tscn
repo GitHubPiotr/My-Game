@@ -1,0 +1,103 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://gui/fonts/FiraGO-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://gui/gamegui/GameGUI.gd" type="Script" id=2]
+[ext_resource path="res://gui/gamegui/quit.png" type="Texture" id=3]
+[ext_resource path="res://gui/gamegui/play.png" type="Texture" id=4]
+[ext_resource path="res://gui/gamegui/coins.png" type="Texture" id=5]
+[ext_resource path="res://gui/gamegui/mob.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 611, 592 )
+modulate_color = Color( 0.607843, 0.607843, 0.607843, 1 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 611, 592 )
+modulate_color = Color( 0.215686, 0.215686, 0.215686, 1 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 611, 592 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 611, 592 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 611, 592 )
+
+[node name="GameGUI" type="Node2D"]
+z_index = 5
+script = ExtResource( 2 )
+
+[node name="Mob" type="Sprite" parent="."]
+position = Vector2( 50, 45 )
+scale = Vector2( 0.12, 0.12 )
+texture = ExtResource( 6 )
+
+[node name="Coins" type="Sprite" parent="."]
+position = Vector2( 50, 95 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 5 )
+
+[node name="Round" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 95.0
+margin_top = 25.0
+margin_right = -927.0
+margin_bottom = -656.0
+custom_fonts/font = SubResource( 1 )
+text = "0 / 9"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Gold" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 95.0
+margin_top = 75.0
+margin_right = -927.0
+margin_bottom = -606.0
+custom_fonts/font = SubResource( 1 )
+text = "999999"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 625.0
+margin_right = 95.0
+margin_bottom = 700.0
+custom_styles/hover = SubResource( 2 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+shortcut_in_tooltip = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Button" parent="."]
+margin_left = 1185.0
+margin_top = 625.0
+margin_right = 1260.0
+margin_bottom = 700.0
+custom_styles/hover = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_Button_pressed"]

@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://towers/tower4/resources/gun2.png" type="Texture" id=1]
+[ext_resource path="res://towers/tower4/resources/base.png" type="Texture" id=2]
+[ext_resource path="res://towers/tower4/resources/gun.png" type="Texture" id=3]
+[ext_resource path="res://towers/tower4/resources/body.png" type="Texture" id=4]
+
+[node name="Base" type="Sprite"]
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 2 )
+
+[node name="BodyNode2D" type="Node2D" parent="."]
+
+[node name="Body" type="Sprite" parent="BodyNode2D"]
+position = Vector2( -50, 0 )
+z_index = 1
+texture = ExtResource( 4 )
+
+[node name="Gun" type="Sprite" parent="BodyNode2D/Body"]
+position = Vector2( 500, 2 )
+z_index = -1
+texture = ExtResource( 3 )
+
+[node name="Gun2" type="Sprite" parent="BodyNode2D/Body"]
+position = Vector2( -80, 2 )
+z_index = -1
+texture = ExtResource( 1 )

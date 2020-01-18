@@ -1,0 +1,81 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://gui/mainmenu/LevelMenu.gd" type="Script" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 960, 540 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 1280.0
+margin_bottom = 317.0
+rect_min_size = Vector2( 0, 270 )
+
+[node name="Level1" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_right = 317.0
+margin_bottom = 317.0
+rect_min_size = Vector2( 317, 317 )
+text = "Level1"
+
+[node name="Level2" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 321.0
+margin_right = 638.0
+margin_bottom = 317.0
+rect_min_size = Vector2( 317, 317 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level3" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 642.0
+margin_right = 959.0
+margin_bottom = 317.0
+rect_min_size = Vector2( 317, 317 )
+
+[node name="Level4" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 963.0
+margin_right = 1280.0
+margin_bottom = 317.0
+rect_min_size = Vector2( 317, 317 )
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 321.0
+margin_right = 1280.0
+margin_bottom = 638.0
+rect_min_size = Vector2( 0, 270 )
+
+[node name="Level1" type="Button" parent="VBoxContainer/HBoxContainer2"]
+margin_right = 317.0
+margin_bottom = 317.0
+rect_min_size = Vector2( 317, 317 )
+
+[node name="Level2" type="Button" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 321.0
+margin_right = 638.0
+margin_bottom = 317.0
+rect_min_size = Vector2( 317, 317 )
+
+[node name="Level3" type="Button" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 642.0
+margin_right = 959.0
+margin_bottom = 317.0
+rect_min_size = Vector2( 317, 317 )
+
+[node name="Level4" type="Button" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 963.0
+margin_right = 1280.0
+margin_bottom = 317.0
+rect_min_size = Vector2( 317, 317 )
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Level1" to="." method="_on_Level1_pressed"]

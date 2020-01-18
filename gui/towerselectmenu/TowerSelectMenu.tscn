@@ -1,0 +1,199 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://gui/towerselectmenu/TowerSelectMenu.gd" type="Script" id=1]
+[ext_resource path="res://gui/towerselectmenu/Button1.gd" type="Script" id=2]
+[ext_resource path="res://towers/tower3/scenes/TowerModel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://gui/towerselectmenu/Button3.gd" type="Script" id=4]
+[ext_resource path="res://towers/tower1/scenes/TowerModel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://towers/tower2/scenes/TowerModel.tscn" type="PackedScene" id=6]
+[ext_resource path="res://gui/towerselectmenu/Button2.gd" type="Script" id=7]
+[ext_resource path="res://gui/towerselectmenu/Button4.gd" type="Script" id=8]
+[ext_resource path="res://towers/tower4/scenes/TowerModel.tscn" type="PackedScene" id=9]
+[ext_resource path="res://towers/tower5/scenes/TowerModel.tscn" type="PackedScene" id=10]
+[ext_resource path="res://gui/towerselectmenu/Button5.gd" type="Script" id=11]
+[ext_resource path="res://gui/towerselectmenu/tower3.png" type="Texture" id=12]
+[ext_resource path="res://gui/towerselectmenu/tower2.png" type="Texture" id=13]
+[ext_resource path="res://gui/towerselectmenu/tower1.png" type="Texture" id=14]
+[ext_resource path="res://gui/towerselectmenu/tower4.png" type="Texture" id=15]
+[ext_resource path="res://gui/towerselectmenu/tower5.png" type="Texture" id=16]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 608, 590 )
+modulate_color = Color( 0.607843, 0.607843, 0.607843, 1 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 608, 590 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 13 )
+region_rect = Rect2( 0, 0, 611, 592 )
+modulate_color = Color( 0.607843, 0.607843, 0.607843, 1 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 13 )
+region_rect = Rect2( 0, 0, 611, 592 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 611, 592 )
+modulate_color = Color( 0.607843, 0.607843, 0.607843, 1 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 611, 592 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 15 )
+region_rect = Rect2( 0, 0, 608, 585 )
+modulate_color = Color( 0.607843, 0.607843, 0.607843, 1 )
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 15 )
+region_rect = Rect2( 0, 0, 608, 585 )
+
+[sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 16 )
+region_rect = Rect2( 0, 0, 607, 589 )
+modulate_color = Color( 0.607843, 0.607843, 0.607843, 1 )
+
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 16 )
+region_rect = Rect2( 0, 0, 607, 589 )
+
+[node name="TowerSelectMenu" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Button1" type="Node2D" parent="." groups=[
+"button",
+]]
+script = ExtResource( 2 )
+
+[node name="Button" type="Button" parent="Button1"]
+margin_left = -35.0
+margin_top = -35.0
+margin_right = 35.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 50, 50 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="Button1"]
+repeat = true
+playback/repeat = true
+
+[node name="TowerModel1" parent="." groups=[
+"texture",
+] instance=ExtResource( 5 )]
+visible = false
+
+[node name="Button2" type="Node2D" parent="." groups=[
+"button",
+]]
+script = ExtResource( 7 )
+
+[node name="Button" type="Button" parent="Button2"]
+margin_left = -35.0
+margin_top = -35.0
+margin_right = 35.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 50, 50 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="Button2"]
+repeat = true
+playback/repeat = true
+
+[node name="TowerModel2" parent="." instance=ExtResource( 6 )]
+visible = false
+
+[node name="Button3" type="Node2D" parent="." groups=[
+"button",
+]]
+script = ExtResource( 4 )
+
+[node name="Button" type="Button" parent="Button3"]
+margin_left = -35.0
+margin_top = -35.0
+margin_right = 35.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 50, 50 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="Button3"]
+repeat = true
+playback/repeat = true
+
+[node name="TowerModel3" parent="." instance=ExtResource( 3 )]
+visible = false
+
+[node name="Button4" type="Node2D" parent="." groups=[
+"button",
+]]
+script = ExtResource( 8 )
+
+[node name="Button" type="Button" parent="Button4"]
+margin_left = -35.0
+margin_top = -35.0
+margin_right = 35.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 50, 50 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="Button4"]
+repeat = true
+playback/repeat = true
+
+[node name="TowerModel4" parent="." instance=ExtResource( 9 )]
+visible = false
+
+[node name="Button5" type="Node2D" parent="." groups=[
+"button",
+]]
+script = ExtResource( 11 )
+
+[node name="Button" type="Button" parent="Button5"]
+margin_left = -35.0
+margin_top = -35.0
+margin_right = 35.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 50, 50 )
+custom_styles/hover = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="Button5"]
+repeat = true
+playback/repeat = true
+
+[node name="TowerModel5" parent="." instance=ExtResource( 10 )]
+visible = false
+scale = Vector2( 0.18, 0.18 )
+
+[node name="TweenO" type="Tween" parent="."]
+
+[node name="TweenC" type="Tween" parent="."]
+[connection signal="pressed" from="Button1/Button" to="Button1" method="_on_Button_pressed"]
+[connection signal="pressed" from="Button2/Button" to="Button2" method="_on_Button_pressed"]
+[connection signal="pressed" from="Button3/Button" to="Button3" method="_on_Button_pressed"]
+[connection signal="pressed" from="Button4/Button" to="Button4" method="_on_Button_pressed"]
+[connection signal="pressed" from="Button5/Button" to="Button5" method="_on_Button_pressed"]
+[connection signal="tween_all_completed" from="TweenC" to="." method="_on_TweenC_tween_all_completed"]

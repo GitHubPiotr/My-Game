@@ -1,0 +1,290 @@
+[gd_scene load_steps=30 format=2]
+
+[ext_resource path="res://gui/mainmenu/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://gui/mainmenu/titlebg.png" type="Texture" id=2]
+[ext_resource path="res://levels/level1/Spatial.tscn" type="PackedScene" id=3]
+[ext_resource path="res://gui/fonts/FiraGO-Bold.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://gui/mainmenu/MainMenu1.tres" type="StyleBox" id=5]
+[ext_resource path="res://gui/mainmenu/MainMenu2.tres" type="StyleBox" id=6]
+[ext_resource path="res://gui/mainmenu/MainMenu3.tres" type="StyleBox" id=7]
+[ext_resource path="res://levels/level1/MapSprite.tscn" type="PackedScene" id=9]
+[ext_resource path="res://gui/mainmenu/Untitled.png" type="Texture" id=10]
+[ext_resource path="res://levels/level2/MapSprite.tscn" type="PackedScene" id=11]
+
+[sub_resource type="DynamicFont" id=1]
+size = 39
+use_filter = true
+extra_spacing_char = 1
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 35
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 60
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 640, 360 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+
+[sub_resource type="StyleBoxTexture" id=7]
+
+[sub_resource type="StyleBoxTexture" id=8]
+
+[sub_resource type="StyleBoxTexture" id=9]
+
+[sub_resource type="StyleBoxTexture" id=10]
+
+[sub_resource type="DynamicFontData" id=11]
+font_path = "res://gui/fonts/FiraGO-Bold.ttf"
+
+[sub_resource type="DynamicFont" id=12]
+size = 100
+use_filter = true
+font_data = SubResource( 11 )
+
+[sub_resource type="StyleBoxTexture" id=13]
+
+[sub_resource type="StyleBoxTexture" id=14]
+
+[sub_resource type="StyleBoxTexture" id=15]
+
+[sub_resource type="StyleBoxTexture" id=16]
+
+[sub_resource type="StyleBoxTexture" id=17]
+
+[sub_resource type="DynamicFont" id=18]
+size = 100
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=19]
+size = 100
+outline_size = 1
+use_filter = true
+font_data = ExtResource( 4 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Sprite" parent="."]
+texture = ExtResource( 10 )
+centered = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
+margin_left = 713.0
+margin_top = 280.0
+margin_right = 1113.0
+margin_bottom = 580.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start" type="Button" parent="Menu/VBoxContainer"]
+margin_top = 74.0
+margin_right = 400.0
+margin_bottom = 139.0
+rect_min_size = Vector2( 0, 65 )
+focus_mode = 0
+custom_styles/hover = ExtResource( 5 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/normal = ExtResource( 7 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.588235, 0.588235, 0.588235, 1 )
+enabled_focus_mode = 0
+text = "Start"
+
+[node name="HSeparator" type="HSeparator" parent="Menu/VBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 143.0
+margin_right = 400.0
+margin_bottom = 147.0
+
+[node name="Exit" type="Button" parent="Menu/VBoxContainer"]
+margin_top = 151.0
+margin_right = 400.0
+margin_bottom = 226.0
+rect_min_size = Vector2( 0, 75 )
+focus_mode = 0
+custom_styles/hover = ExtResource( 5 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/normal = ExtResource( 7 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.588235, 0.588235, 0.588235, 1 )
+enabled_focus_mode = 0
+text = "Exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Levels" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+offset = Vector2( 0, -720 )
+
+[node name="BackButton" type="Button" parent="Levels"]
+anchor_top = 0.00345323
+anchor_bottom = 0.00345323
+margin_left = 447.505
+margin_top = -108.221
+margin_right = 847.505
+margin_bottom = -33.2214
+custom_styles/hover = ExtResource( 5 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/normal = ExtResource( 7 )
+custom_fonts/font = SubResource( 3 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelList" type="Node2D" parent="Levels"]
+
+[node name="Level1" type="Node2D" parent="Levels/LevelList"]
+
+[node name="Label" type="Label" parent="Levels/LevelList/Level1"]
+margin_left = 255.0
+margin_top = -646.0
+margin_right = 644.0
+margin_bottom = -573.0
+custom_fonts/font = SubResource( 4 )
+text = "Level 1: Forest"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Map1" parent="Levels/LevelList/Level1" instance=ExtResource( 9 )]
+position = Vector2( 260.949, -572.665 )
+scale = Vector2( 0.6, 0.6 )
+z_index = 1
+
+[node name="Area2D" type="Area2D" parent="Levels/LevelList/Level1/Map1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/LevelList/Level1/Map1/Area2D"]
+visible = false
+position = Vector2( 640, 360 )
+shape = SubResource( 5 )
+
+[node name="Map2" parent="Levels/LevelList/Level1/Map1" instance=ExtResource( 11 )]
+position = Vector2( 2711.79, 346.353 )
+
+[node name="Level2" type="Node2D" parent="Levels/LevelList"]
+
+[node name="Label" type="Label" parent="Levels/LevelList/Level2"]
+margin_left = 1501.0
+margin_top = -657.41
+margin_right = 1893.0
+margin_bottom = -508.41
+custom_fonts/font = SubResource( 4 )
+text = "Level 2: Moon
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BLeft" type="Button" parent="Levels"]
+margin_left = 90.0
+margin_top = -444.0
+margin_right = 159.148
+margin_bottom = -322.618
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+custom_fonts/font = SubResource( 12 )
+text = "<"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BRight" type="Button" parent="Levels"]
+margin_left = 1100.0
+margin_top = -444.0
+margin_right = 1205.0
+margin_bottom = -304.913
+custom_styles/hover = SubResource( 13 )
+custom_styles/pressed = SubResource( 14 )
+custom_styles/focus = SubResource( 15 )
+custom_styles/disabled = SubResource( 16 )
+custom_styles/normal = SubResource( 17 )
+custom_fonts/font = SubResource( 18 )
+text = ">"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TweenLL" type="Tween" parent="Levels"]
+
+[node name="BotBg" type="Sprite" parent="."]
+position = Vector2( 640, 1080 )
+rotation = 3.14159
+texture = ExtResource( 2 )
+
+[node name="TopBg" type="Sprite" parent="."]
+position = Vector2( 640, -1080 )
+rotation = 3.14159
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 699.214
+margin_top = 198.063
+margin_right = 1113.22
+margin_bottom = 319.063
+custom_fonts/font = SubResource( 19 )
+text = "My Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+editor_draw_screen = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Camera2D"]
+position = Vector2( 668.958, 438.503 )
+volume_db = 10.0
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Viewport" type="Viewport" parent="."]
+arvr = true
+size = Vector2( 1280, 720 )
+size_override_stretch = true
+own_world = true
+handle_input_locally = false
+msaa = 1
+hdr = false
+render_target_v_flip = true
+render_target_update_mode = 3
+
+[node name="Spatial" parent="Viewport" instance=ExtResource( 3 )]
+[connection signal="pressed" from="Menu/VBoxContainer/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="Levels/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="input_event" from="Levels/LevelList/Level1/Map1/Area2D" to="." method="_on_Area2D_input_event"]
+[connection signal="pressed" from="Levels/BLeft" to="." method="_on_BLeft_pressed"]
+[connection signal="pressed" from="Levels/BRight" to="." method="_on_BRight_pressed"]
+[connection signal="tween_completed" from="Levels/TweenLL" to="." method="_on_TweenLL_tween_completed"]
+[connection signal="tween_started" from="Levels/TweenLL" to="." method="_on_TweenLL_tween_started"]

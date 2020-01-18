@@ -1,0 +1,80 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+}
+
+[application]
+
+config/name="My Game"
+run/main_scene="res://gui/mainmenu/MainMenu.tscn"
+config/icon="res://icon.png"
+
+[audio]
+
+default_bus_layout="res://engine/default_bus_layout.tres"
+
+[autoload]
+
+Game="*res://engine/Game.gd"
+
+[debug]
+
+gdscript/warnings/unused_argument=false
+gdscript/warnings/return_value_discarded=false
+
+[display]
+
+window/size/width=1280
+window/size/height=720
+window/size/resizable=false
+window/size/test_width=1280
+window/size/test_height=720
+window/stretch/mode="2d"
+window/stretch/aspect="expand"
+
+[input]
+
+ui_mouse_click={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+ui_mouse_click2={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+
+[layer_names]
+
+2d_physics/layer_1="tower"
+3d_physics/layer_1="enviroment"
+2d_physics/layer_2="bullet"
+3d_physics/layer_2="tower"
+2d_physics/layer_3="enemy"
+3d_physics/layer_3="bullet"
+2d_physics/layer_4="environment"
+3d_physics/layer_4="enemy"
+2d_physics/layer_5="map"
+2d_physics/layer_6="cursor"
+
+[physics]
+
+common/physics_fps=120
+2d/physics_engine="GodotPhysics"
+2d/thread_model=2
+
+[rendering]
+
+threads/thread_model=2
+environment/default_environment="res://engine/default_env.tres"

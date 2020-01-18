@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://levels/level1/Path2D.gd" type="Script" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Area2D
+
+var player_health
+
+func _ready():
+	player_health = Game.LEVEL1_PLAYER_HEALTH
+
+func enemy_entered():
+	player_health -= 1
+	if player_health <= 0:
+		pass #GAME OVER
+
+func _on_GameOverArea_area_entered(area):
+	enemy_entered()
+	area.queue_free()
+"
+
+[sub_resource type="SegmentShape2D" id=2]
+b = Vector2( 0, 50 )
+
+[sub_resource type="Curve2D" id=3]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 85.7359, -36.8457, 0, 0, 0, 0, 84.0463, 623.59, 0, 0, 0, 0, 120.647, 665.048, 0, 0, 0, 0, 394.663, 665.333, 0, 0, 0, 0, 435.068, 633.514, 0, 0, 0, 0, 430.267, 176.694, 0, 0, 0, 0, 457.843, 132.822, 0, 0, 0, 0, 688.091, 132.496, 0, 0, 0, 0, 761.755, 157.051, 0, 0, 0, 0, 815.776, 213.526, 0, 0, 0, 0, 855.063, 315.428, 0, 0, 0, 0, 918.905, 490.994, 0, 0, 0, 0, 1009.76, 562.203, 0, 0, 0, 0, 1307.38, 564.089 )
+}
+
+[node name="Areas" type="Node"]
+
+[node name="PathArea" type="Area2D" parent="." groups=[
+"path",
+]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PathArea"]
+visible = false
+polygon = PoolVector2Array( 50.9344, -3.11694, 52.461, 665.926, 69.6447, 685.974, 440.524, 688.838, 469.164, 670.222, 470.596, 169.033, 691.119, 167.601, 742.67, 180.489, 772.741, 209.128, 804.244, 267.839, 870.115, 471.178, 912.342, 536.958, 967.489, 580.008, 1023.34, 595.76, 1281.12, 595.51, 1281.09, 537.049, 1063.43, 537.049, 1020.47, 532.753, 975.478, 502.255, 948.873, 466.882, 872.979, 234.904, 834.316, 173.329, 769.877, 123.21, 704.007, 110.322, 430.501, 107.458, 404.725, 120.346, 396.133, 147.553, 396.133, 628.695, 125.491, 628.695, 126.923, -2.80316 )
+
+[node name="GameOverArea" type="Area2D" parent="."]
+script = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameOverArea"]
+position = Vector2( 1307.13, 540.161 )
+shape = SubResource( 2 )
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource( 3 )
+script = ExtResource( 1 )
+[connection signal="area_entered" from="GameOverArea" to="GameOverArea" method="_on_GameOverArea_area_entered"]

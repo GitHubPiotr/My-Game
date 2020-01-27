@@ -66,6 +66,7 @@ script = ExtResource( 3 )
 [node name="FireLight" type="Light2D" parent="."]
 position = Vector2( -0.19371, 0.225934 )
 rotation = 3.14159
+enabled = false
 texture = ExtResource( 1 )
 texture_scale = 3.0
 shadow_enabled = true

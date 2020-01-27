@@ -186,14 +186,14 @@ position = Vector2( 640, 360 )
 shape = SubResource( 5 )
 
 [node name="Map2" parent="Levels/LevelList/Level1/Map1" instance=ExtResource( 11 )]
-position = Vector2( 2711.79, 346.353 )
+position = Vector2( 2750, 360 )
 
 [node name="Level2" type="Node2D" parent="Levels/LevelList"]
 
 [node name="Label" type="Label" parent="Levels/LevelList/Level2"]
-margin_left = 1501.0
+margin_left = 1525.61
 margin_top = -657.41
-margin_right = 1893.0
+margin_right = 1917.61
 margin_bottom = -508.41
 custom_fonts/font = SubResource( 4 )
 text = "Level 2: Moon
@@ -247,10 +247,10 @@ rotation = 3.14159
 texture = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 699.214
-margin_top = 198.063
-margin_right = 1113.22
-margin_bottom = 319.063
+margin_left = 707.848
+margin_top = 204.538
+margin_right = 1121.85
+margin_bottom = 325.538
 custom_fonts/font = SubResource( 19 )
 text = "My Game"
 __meta__ = {
@@ -263,7 +263,7 @@ current = true
 editor_draw_screen = false
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Camera2D"]
-position = Vector2( 668.958, 438.503 )
+position = Vector2( 634.805, 370.197 )
 volume_db = 10.0
 
 [node name="Tween" type="Tween" parent="."]

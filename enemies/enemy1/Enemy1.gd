@@ -13,6 +13,8 @@ var normal_speed
 var gold_for_kill
 var experience_for_kill
 
+var label_root_pos
+
 func _init():
 	speed = Game.ENEMY1_MOVEMENT_SPEED
 	normal_speed = Game.ENEMY1_MOVEMENT_SPEED
@@ -20,6 +22,7 @@ func _init():
 	experience_for_kill = Game.ENEMY1_EXPERIENCE
 
 func _ready():
+	label_root_pos = $TakenDamageInfo.rect_position
 	Hp_bar.max_value = Game.ENEMY1_HEALTH
 	Hp_bar.value = Hp_bar.max_value
 	connect("change_gold", Level, "_change_gold")
@@ -38,7 +41,11 @@ func hit(bullet):
 		queue_free()
 
 func hit_fx(bullet):
+	$TakenDamageInfo.visible = true
 	$Tween.interpolate_property($Body, "modulate", Color(1,0.5,0.5,1), Color(1,1,1,1), 0.2, Tween.TRANS_CUBIC, Tween.EASE_IN)
+	$TakenDamageInfo.text = str(bullet.damage)
+	$Tween.interpolate_property($TakenDamageInfo, "modulate", Color(1,1,1,1), Color(1,1,1,0.5), 0.2, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	$Tween.interpolate_property($TakenDamageInfo, "rect_position", label_root_pos, label_root_pos - Vector2(0, 15), 0.2, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	$Tween.start()
 
 func slow(bullet):
@@ -51,3 +58,6 @@ func _on_Timer_timeout():
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	$AnimationPlayer.play(anim_name)
+
+func _on_Tween_tween_all_completed():
+	$TakenDamageInfo.visible = false

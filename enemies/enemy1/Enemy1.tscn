@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://enemies/enemy1/Enemy1.gd" type="Script" id=1]
 [ext_resource path="res://enemies/enemy1/rect23.png" type="Texture" id=2]
 [ext_resource path="res://enemies/enemy1/path890.png" type="Texture" id=3]
 [ext_resource path="res://enemies/enemy1/path10.png" type="Texture" id=4]
 [ext_resource path="res://fx/shadow.png" type="Texture" id=5]
+[ext_resource path="res://gui/fonts/FiraGO-Bold.ttf" type="DynamicFontData" id=6]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( -6.94092, -20.3195, 2.95186, -21.2188, 12.395, -17.6214, 18.9902, -10.1269, 21.3884, 0.0656471, 18.8403, 10.4081, 9.84682, 18.5022, -0.495625, 20.9004, -7.99015, 19.8512, -14.8851, 15.2046, -19.2319, 9.95842, -21.7801, 0.665211, -19.3818, -8.32823, -11.8873, -17.3217 )
@@ -58,6 +59,13 @@ bg_color = Color( 0.176471, 0.729412, 0.160784, 1 )
 [sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 1, 1, 1, 0.623529 )
 corner_detail = 1
+
+[sub_resource type="DynamicFont" id=6]
+size = 32
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 6 )
 
 [node name="Enemy" type="Area2D" groups=[
 "enemy",
@@ -116,6 +124,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="TakenDamageInfo" type="Label" parent="."]
+visible = false
+margin_left = -43.0
+margin_top = -16.0
+margin_right = 82.0
+margin_bottom = 32.0
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.776471, 0, 0, 1 )
+text = "99999"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Tween" type="Tween" parent="."]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]

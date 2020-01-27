@@ -4,12 +4,7 @@ var damage
 var pierce
 var velocity
 
-func _ready():
-	damage = Game.TOWER1_DAMAGE
-	pierce = Game.TOWER1_PIERCE
-	velocity = Game.TOWER1_BULLET_VELOCITY
-
-func init(_damage, _pierce, _velocity):
+func init(_damage, _velocity, _pierce):
 	pierce = _pierce
 	damage = _damage
 	velocity = _velocity

@@ -17,7 +17,7 @@ func _init():
 	slow = Game.TOWER1_SLOW
 
 func _upgrade_tower(upgrade_multiplier):
-	bullet_damage = Game.TOWER1_DAMAGE * upgrade_multiplier[2]
+	bullet_damage = int(Game.TOWER1_DAMAGE * upgrade_multiplier[2])
 	radius = Game.TOWER1_RADIUS * upgrade_multiplier[3]
 	reload_time = Game.TOWER1_RELOAD_TIME * upgrade_multiplier[4]
 	bullet_pierce = Game.TOWER1_PIERCE * upgrade_multiplier[5]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://towers/tower2/scripts/Tower2.gd" type="Script" id=1]
 [ext_resource path="res://towers/tower2/resources/base.png" type="Texture" id=2]
 [ext_resource path="res://fx/shadow.png" type="Texture" id=3]
 [ext_resource path="res://towers/tower2/scripts/Radius.gd" type="Script" id=4]
+[ext_resource path="res://sounds/94185__nbs-dark__explosion.wav" type="AudioStream" id=5]
 [ext_resource path="res://towers/tower2/resources/body.png" type="Texture" id=6]
 
 [sub_resource type="Animation" id=1]
@@ -79,6 +80,7 @@ texture = ExtResource( 6 )
 anims/ShootAnim = SubResource( 1 )
 
 [node name="ShootSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
 area_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
